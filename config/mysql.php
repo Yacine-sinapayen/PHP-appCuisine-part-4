@@ -1,10 +1,11 @@
 <?php
-// Variables e connexion à ma bdd (normalement stocké dans un .env afin d'être plus sécurisé)
+// Ce script gère la connexion à ma bdd Mysql
+// Variables de connexion à ma bdd (normalement stocké dans un .env afin d'être plus sécurisé)
 const MYSQL_HOST = 'localhost';
-const MYSQL_PORT = 3306;
+const MYSQL_PORT = 8888;
 const MYSQL_NAME = 'we_love_food';
 const MYSQL_USER = 'root';
-const MYSQL_PASSWORD = '';
+const MYSQL_PASSWORD = 'root';
 
 try {
     $mysqlClient = new PDO(

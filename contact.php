@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site de Recettes - Page d'accueil</title>
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
         rel="stylesheet"
     >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </head>
 <body class="d-flex flex-column min-vh-100">
+    <?php include_once('header.php'); ?>
     <div class="container">
 
-    <?php include_once('header.php'); ?>
         <h1>Contactez nous</h1>
         <form action="submit_contact.php" method="POST">
             <div class="mb-3">
