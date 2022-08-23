@@ -3,10 +3,10 @@
 session_start();
 
 // Ce script véirifie si l'utilisateur est connecté
-// include_once('./config/mysql.php');
-// // Ce script gère la connexion ) ma BDD
-// include_once('./config/user.php');
-// include_once('./variables.php');
+include_once('../config/mysql.php');
+// Ce script gère la connexion ) ma BDD
+include_once('../config/user.php');
+include_once('../variables.php');
 
 // var dans laquelle seront stockés mes données
 $postData = $_POST;
@@ -22,7 +22,7 @@ $title = $_POST['title'];
 $recipe = $_POST['recipe'];
 
 // Insertion en bdd des données de notre formulaire
-$insertRecipe = $mysqlClient->prepare('INSERT INTO recipe(title, recipe, author, is_enabled) VALUES (:title, :recipe, :author, :is_enabled)');
+$insertRecipe = $mysqlClient->prepare('INSERT INTO recipes(title, recipe, author, is_enabled) VALUES (:title, :recipe, :author, :is_enabled)');
 // Je récupère les données du form soumis par l'utilisateur
 $insertRecipe->execute([
     'title' => $title,
@@ -43,11 +43,13 @@ $insertRecipe->execute([
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site de Recettes - Création de recette</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <?php include_once($rootPath . '/appCuisine-part-4/header.php'); ?>
     <div class="container">
-        <?php include_once($rootPath . '/header.php'); ?>
         <h1>Recette ajoutée avec succès !</h1>
 
         <div class="card">
@@ -58,7 +60,7 @@ $insertRecipe->execute([
             </div>
         </div>
     </div>
-    <?php include_once($rootPath.'/footer.php'); ?>
+    <?php include_once($rootPath.'/appCuisine-part-4/footer.php'); ?>
 </body>
 
 </html>

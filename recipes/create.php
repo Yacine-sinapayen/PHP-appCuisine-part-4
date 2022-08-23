@@ -17,10 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
+    <?php include_once($rootPath . '/appCuisine-part-4/header.php'); ?>
     <div class="container">
-        <?php include_once($rootPath . '/header.php'); ?>
         <h1>Ajouter une recette</h1>
-        <form action="<?php echo ($rootUrl . 'recipes/post_create.php'); ?>" method="POST">
+        <form action="<?php echo ($rootUrl . 'appCuisine-part-4/recipes/post_create.php'); ?>" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">Titre de la recette</label>
                 <input type="text" class="form-control" id="title" name="title" aria-describedby="title-help">
@@ -35,7 +35,7 @@
         <br />
     </div>
 
-    <?php include_once($rootPath . '/footer.php'); ?>
+    <?php include_once($rootPath . '/appCuisine-part-4//footer.php'); ?>
 </body>
 
 </html>

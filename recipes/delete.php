@@ -20,8 +20,20 @@ $getData = $_GET;
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
-<?php include_once($rootPath.'/header.php'); ?>
-<h1>Supprimer la recette ?</h1>
-<form action="<?php echo($rootUrl . 'recipes/post_delete') ?>"></form>
-    
+
+    <?php include_once($rootPath.'/header.php'); ?>
+        <h1>Supprimer la recette ?</h1>
+        <form action="<?php echo($rootUrl . 'recipes/post_delete.php'); ?>" method="POST">
+            <div class="mb-3 visually-hidden">
+                <label for="id" class="form-label">Identifiant de la recette</label>
+                <input type="hidden" class="form-control" id="id" name="id" value="<?php echo($getData['id']); ?>">
+            </div>
+            
+            <button type="submit" class="btn btn-danger">La suppression est définitive</button>
+        </form>
+        <br />
     </div>
+
+    <?php include_once($rootPath.'/footer.php'); ?>
+</body>
+</html>
